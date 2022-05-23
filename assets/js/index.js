@@ -5,7 +5,6 @@ if(!productsInCart){
 }
 const parentElement = document.querySelector('#buyItems');
 const cartSumPrice = document.querySelector('#sum-prices');
-// const products = document.querySelectorAll('.product-under');
 let products;
 
 function closeCart() {
@@ -33,18 +32,10 @@ overlay.addEventListener('click', closeCart);
 
 var mainContainer = document.getElementById("container");
 
-var cartImg = document.createElement('img');
-var cartContainer = document.createElement('div');
-cartContainer.setAttribute('id', `cart-container`);
-cartImg.src = 'assets/images/icons/bag-icon.png';
-cartImg.classList.add('cart-img');
-
-
 var booksContainer = document.createElement('div');
 booksContainer.classList.add('books-container');
 
 
-// mainContainer.appendChild(cartImg);
 
 fetch('books.json') //path to the file with json data
         .then(response => {
@@ -60,12 +51,23 @@ fetch('books.json') //path to the file with json data
 
 
                 var h4 = document.createElement("h4");
+                h4.classList.add('authorName');
 
                 var h2 = document.createElement("h2");
                 h2.classList.add('productName');
 
                 var price = document.createElement("span");
                 price.classList.add('productPrice', 'priceValue');
+
+                var currency = document.createElement('span');
+                currency.classList.add('currency');
+                currency.innerHTML = ' $';
+
+                var costContainer = document.createElement('div');
+                costContainer.classList.add('cost-container');
+
+                costContainer.appendChild(price);
+                costContainer.appendChild(currency);
 
                 var addToBag = document.createElement("button");
                 addToBag.setAttribute('data-product-id', `${i}`);
@@ -76,6 +78,7 @@ fetch('books.json') //path to the file with json data
 
                 var bookImg=document.createElement('img');
                 bookImg.classList.add('bookImg');
+                bookImg.setAttribute('alt', data[i].title)
                 bookImg.src=data[i].imageLink;
                                 
 
@@ -91,7 +94,7 @@ fetch('books.json') //path to the file with json data
                 div.appendChild(bookImg);
                 div.appendChild(h4);
                 div.appendChild(h2);
-                div.appendChild(price);
+                div.appendChild(costContainer);
                 div.appendChild(showMore);
                 div.appendChild(addToBag);
                 
