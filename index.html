@@ -4,14 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="style.css" />
 
     <title>Book Shop - Mukhlisa</title>
   </head>
   <body>
 
-    <div class="container" id="container"></div>
+    <div class="container" id="container">
+       
+
+<div class="shopping-cart">
+    <div class="sum-prices">
+        <!--Shopping cart logo-->
+        <div class="shoppingCartButton"><img class="cart-img" src="assets/images/icons/bag-icon.png"></div>
+        <!--The total prices of products in the shopping cart -->
+        <h6 id="sum-prices"></h6>
+    </div>
+</div>
+
+
+       
+<div class="producstOnCart hide">
+    <div class="overlay"></div>
+    <div class="top">
+        <button id="closeButton">
+            <i class="fas fa-times-circle">x</i>
+        </button>
+        <h3>Cart</h3>
+    </div>
+    <ul id="buyItems">
+        <h4 class="empty">Your shopping cart is empty</h4>
+     
+    </ul>
+    <button class="btn checkout hidden">Check out</button>
+</div>
+
+
+
+<button class="btn checkout hidden">Check out</button>
+
+    </div>
 
   </body>
   <script type="module" src="index.js"></script>
+  <script type="module" src="shopping-cart.js"></script>
 </html>

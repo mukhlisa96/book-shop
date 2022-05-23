@@ -1,8 +1,4 @@
-.book-card{
-    border: 1px solid black;
-    margin: 50px;
-    padding: 50px;
-}
+
 
 .popup-container{
    border: 1px solid black;
@@ -10,7 +6,6 @@
     padding: 50px;
     background: blue; 
 }
-
 
 .modal {
   position: fixed;
@@ -41,6 +36,7 @@
     background: #fff;
     position: relative;
     padding: 30px;
+    width: 60vh;
   }
   .modal-close {
     position: absolute;
@@ -54,3 +50,41 @@
     font-weight: bold;
     cursor: pointer;
   }
+.bookImg{
+    width: 200px;
+    height: auto;
+}
+.cart-img{
+width: auto;
+height: 30px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  /*border: 1px solid black;*/
+    margin: 10px;
+    padding: 10px;
+    flex: 1 1 100px;
+align-items: center;
+text-align: center;
+justify-content: space-around;
+box-shadow: 4px 5px 10px #0000003d;
+border-radius: 10px;
+}
+
+
+.books-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.addToCart {
+  border: none;
+  background: #00a6a7;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+}
+
