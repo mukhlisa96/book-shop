@@ -127,18 +127,23 @@ fetch('books.json') //path to the file with json data
                 
 
 
-                modal.appendChild(modal_bg_exit);
-                modal.appendChild(modalContainer);
+             
                 modalContainer.appendChild(modalHeading);
                 modalContainer.appendChild(modalDesc);
                 modalContainer.appendChild(closeBtn);
 
+
+   modal.appendChild(modal_bg_exit);
+                modal.appendChild(modalContainer);
+                
                 mainContainer.appendChild(modal);
+mainContainer.appendChild(booksContainer);
 
                 const modals = document.querySelectorAll('[data-modal]');
 
                 modals.forEach(function (trigger) {
                   trigger.addEventListener('click', function (event) {
+                    console.log('modal');
                     event.preventDefault();
                     const modal = document.getElementById(trigger.dataset.modal);
                     modal.classList.add('open');
@@ -155,7 +160,7 @@ fetch('books.json') //path to the file with json data
 
 
               }//for-end
-mainContainer.appendChild(booksContainer);
+// mainContainer.appendChild(booksContainer);
 products=document.querySelectorAll('.book-card');
 
 
@@ -169,7 +174,7 @@ const countTheSumPrice = function () { // 4
 
 const updateShoppingCartHTML = function () {  // 3
     localStorage.setItem('shoppingCart', JSON.stringify(productsInCart));
-    console.log(productsInCart);
+    // console.log(productsInCart);
     if (productsInCart.length > 0) {
         let result = productsInCart.map(product => {
             console.log(product);
@@ -209,7 +214,7 @@ function updateProductsInCart(product) { // 2
     }
 
     productsInCart.push(product);
-    console.log(product);
+    // console.log(product);
 }
 
 products.forEach(item => {   // 1
@@ -227,9 +232,9 @@ products.forEach(item => {   // 1
                 price: +productPrice,
                 basePrice: +productPrice,
             }
-            console.log(product);
+            // console.log(product);
             updateProductsInCart(product);
-             console.log(productsInCart);
+             // console.log(productsInCart);
             updateShoppingCartHTML();
         }
     });

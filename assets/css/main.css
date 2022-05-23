@@ -240,12 +240,12 @@ nav .navbar-top {
     border: none;
     font-size: 1.5rem;
     margin-left: 10px;
-    color: #c24c37;
+    color: #29958d;
     cursor: pointer;
 }
 
 .top button:hover {
-    color: #e40505;
+    color: #29958d;
 }
 
 .top h3 {
